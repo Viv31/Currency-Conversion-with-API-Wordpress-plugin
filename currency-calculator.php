@@ -1,6 +1,6 @@
 <?php
 /*
-* Plugin Name:Currency Calcultor
+* Plugin Name:Currency Conversion Calcultor
 * Author:Vaibhav
 * Version:1.0
 * Description:Convert currencis through API's
@@ -17,4 +17,7 @@ include_once('currency_shortcode.php');
 //calling main file which converts the currency
 include_once('convert_currency.php');
 
+/*//calling main file which converts the currency
+include_once('libraries.php');
+*/
 ?>

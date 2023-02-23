@@ -1,11 +1,12 @@
 <?php
+if(!defined('ABSPATH')) exit;
 //ajax function 
    add_action('wp_ajax_get_convertedCurrency','get_convertedCurrency' );
    add_action('wp_ajax_nopriv_get_convertedCurrency','get_convertedCurrency' );
    function get_convertedCurrency(){
    	global $wpdb; // this is how you get access to the database
-   	$curr_amount = $_POST['curr_amount'];
-   	$currency = strtoupper($_POST['currency']);
+   	$curr_amount = sanitize_text_field($_POST['curr_amount']);
+   	$currency = strtoupper(sanitize_text_field($_POST['currency']));
    	$API_Key = "FynqUtKB6TBcs6MuSEOmCNsAbLtCvaXF5vUTLOQb";
    	//die($currency);
    	$api_url = "https://api.freecurrencyapi.com/v1/latest?apikey=$API_Key&currencies=$currency";

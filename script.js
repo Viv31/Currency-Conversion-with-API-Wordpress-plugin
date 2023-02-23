@@ -18,14 +18,14 @@ jQuery('#currency').change(function(){
 			    	data:data,
 			    beforeSend: function() {
        				 // setting a timeout
-       				 jQuery(".converted_rate").html('<p>Processing..............</p>');
+       				 jQuery(".converted_rate").html('<div class="spinner-border text-primary" role="status"><span class="sr-only">Loading...</span></div>');
     			},
     			success: function(res){
 			    	if(res){
 			    		//alert(res);
 			    		var converted_amount = ((res)*(curr_amount));
 			    		//alert(converted_amount);
-			      		jQuery(".converted_rate").html('<span>'+converted_amount.toFixed(2)+'</span>'+' '+currency);
+			      		jQuery(".converted_rate").html('<span class="btn btn-primary">'+converted_amount.toFixed(2)+'</span>'+' '+currency);
 			      	}
 			  }
 
